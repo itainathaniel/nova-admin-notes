@@ -1,5 +1,5 @@
 {
-    "name": "itainathaniel/admin-notes",
+    "name": "itainathaniel/nova-admin-notes",
     "description": "Laravel Nova tool for saving notes on the admin panel",
     "keywords": [
         "laravel",

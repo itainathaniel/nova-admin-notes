@@ -2,6 +2,10 @@
 
 ## A tool for keeping thoughts, ideas and drafts within the admin
 
+[![Latest Version on Packagist](https://img.shields.io/packagist/v/itainathaniel/nova-admin-notes.svg?style=flat-square)](https://packagist.org/packages/itainathaniel/nova-admin-notes)
+[![Total Downloads](https://img.shields.io/packagist/dt/itainathaniel/nova-admin-notes.svg?style=flat-square)](https://packagist.org/packages/itainathaniel/nova-admin-notes)
+
+
 ![screenshot of the notes tool](https://itainathaniel.github.io/nova-admin-notes/screenshot.png)
 
 ## Installation

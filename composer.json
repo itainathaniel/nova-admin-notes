@@ -1,0 +1,30 @@
+{
+    "name": "itainathaniel/admin-notes",
+    "description": "Laravel Nova tool for saving notes on the admin panel",
+    "keywords": [
+        "laravel",
+        "nova",
+        "notes"
+    ],
+    "license": "MIT",
+    "require": {
+        "php": ">=7.1.0"
+    },
+    "autoload": {
+        "psr-4": {
+            "Itainathaniel\\AdminNotes\\": "src/"
+        }
+    },
+    "extra": {
+        "laravel": {
+            "providers": [
+                "Itainathaniel\\AdminNotes\\ToolServiceProvider"
+            ]
+        }
+    },
+    "config": {
+        "sort-packages": true
+    },
+    "minimum-stability": "dev",
+    "prefer-stable": true
+}

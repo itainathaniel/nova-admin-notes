@@ -5,7 +5,11 @@
         <card class="mb-6 py-3 px-6">
             <div class="flex border-b border-40">
                 <div class="w-full px-8 py-6 h-full">
-                    <textarea v-model="notes" class="w-full h-screen form-control form-input form-input-bordered py-3 min-h-textarea"></textarea>
+                    <textarea
+                        v-model="notes"
+                        @keyup="isChanged=true"
+                        class="w-full h-screen form-control form-input form-input-bordered py-3 min-h-textarea"
+                    ></textarea>
                 </div>
             </div>
             <div class="bg-30 flex px-8 py-4">
@@ -21,11 +25,13 @@
 export default {
     data() {
         return {
+            isChanged: false,
             notes: Nova.config.notes,
         }
     },
     mounted() {
         this.getNotes()
+        this.initAutoSaveTimeout()
     },
     methods: {
         getNotes() {
@@ -41,11 +47,23 @@ export default {
                     notes: this.notes
                 })
                 .then(response => {
-                    this.$toasted.show(response.data.message, { type: 'success' })
+                    this.$toasted.show('Note saved', { type: 'success' })
                 })
                 .catch(response => {
                     this.$toasted.show('Something went wrong', {type: 'error'})
                 });
+        },
+        initAutoSaveTimeout() {
+            setTimeout(this.autoSave, 5 * 1000)
+            console.log('initAutoSaveTimeout')
+        },
+        autoSave() {
+            console.log('autoSave', this.isChanged)
+            if (this.isChanged) {
+                this.saveNotes()
+                this.isChanged = false
+            }
+            this.initAutoSaveTimeout()
         }
     }
 }

@@ -18,7 +18,6 @@ class NotesController
 
 		return response([
 			'notes' => Storage::get($this->file),
-			'message' => 'Notes loaded',
 		], 200);
 	}
 
@@ -30,7 +29,6 @@ class NotesController
 
 		return response([
 			'notes' => Storage::get($this->file),
-			'message' => 'Notes loaded',
 		], 200);
 	}
 

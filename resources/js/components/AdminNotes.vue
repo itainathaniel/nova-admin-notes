@@ -8,7 +8,8 @@
                     <textarea
                         v-model="notes"
                         @keyup="isChanged=true"
-                        class="w-full h-screen form-control form-input form-input-bordered py-3 min-h-textarea"
+                        class="w-full form-control form-input form-input-bordered py-3 min-h-textarea"
+                        style="height:50vh;"
                     ></textarea>
                 </div>
             </div>
@@ -54,11 +55,9 @@ export default {
                 });
         },
         initAutoSaveTimeout() {
-            setTimeout(this.autoSave, 5 * 1000)
-            console.log('initAutoSaveTimeout')
+            setTimeout(this.autoSave, 7 * 1000)
         },
         autoSave() {
-            console.log('autoSave', this.isChanged)
             if (this.isChanged) {
                 this.saveNotes()
                 this.isChanged = false
